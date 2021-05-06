@@ -1,26 +1,33 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { Spin } from "antd";
+import { HashRouter } from "react-router-dom";
+import Pages from "./pages";
 import logo from "./logo.svg";
 import "./App.css";
-import { Button } from "antd";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="appContainer" style={{ height: "100%" }}>
+      <HashRouter>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                width: "100vw",
+                height: "100vh",
+                backgroundColor: "transparent",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Spin />
+            </div>
+          }
         >
-          Learn React
-        </a>
-        <Button>123123</Button>
-      </header>
+          <Pages />
+        </Suspense>
+      </HashRouter>
     </div>
   );
 }
