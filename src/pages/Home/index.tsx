@@ -1,13 +1,39 @@
-import React from "react";
-
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Button } from "antd";
+import { State } from "../../store";
+import { Header, Footer } from "../../components";
 import "./index.less";
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  const currentResource = useSelector((state: State) => state.currentResource);
+
+  useEffect(() => {
+    console.log("currentResource", currentResource);
+  }, [currentResource]);
+
+  const handleClick = () => {
+    dispatch({
+      type: "INCREMENT",
+      payload: {
+        data: 1,
+      },
+    });
+  };
+
   return (
     <div className="main-container">
-      <header className="header">header</header>
-      <main className="main">main</main>
-      <footer className="footer">footer</footer>
+      <Header></Header>
+      <main className="main">
+        <div className="left-panel">
+          left
+          <Button onClick={handleClick}>click</Button>
+        </div>
+        <div className="main-content">main-content</div>
+      </main>
+      <Footer></Footer>
     </div>
   );
 }
