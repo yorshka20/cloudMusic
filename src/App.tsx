@@ -1,32 +1,13 @@
-import React, { Suspense } from "react";
-import { Spin } from "antd";
+import React from "react";
 import { HashRouter } from "react-router-dom";
 import Pages from "./pages";
-import logo from "./logo.svg";
-import "./App.css";
+import "./App.less";
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="appContainer" style={{ height: "100%" }}>
       <HashRouter>
-        <Suspense
-          fallback={
-            <div
-              style={{
-                width: "100vw",
-                height: "100vh",
-                backgroundColor: "transparent",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Spin />
-            </div>
-          }
-        >
-          <Pages />
-        </Suspense>
+        <Pages />
       </HashRouter>
     </div>
   );
