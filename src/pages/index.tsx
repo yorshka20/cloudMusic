@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { ErrorBoundary } from "../components";
 import routerConfig from "../config/routerConfig";
@@ -6,6 +6,10 @@ import { useAudioPlay } from "../hooks";
 
 export default function Pages(): JSX.Element {
   useAudioPlay();
+
+  useEffect(() => {
+    setInterval(() => console.log(1), 1000);
+  }, []);
 
   return (
     <React.Fragment>

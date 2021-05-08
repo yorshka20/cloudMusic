@@ -1,7 +1,11 @@
 import { combineReducers } from "redux";
 import { State, ActionType } from "./types";
+import initialState from "./state";
 
-const reducer = function (state: State, action: ActionType): State {
+const reducer = function (
+  state: State = initialState,
+  action: ActionType
+): State {
   switch (action.type) {
     case "INCREMENT": {
       const { data } = action.payload;
@@ -22,5 +26,5 @@ const reducer = function (state: State, action: ActionType): State {
 };
 
 export default combineReducers({
-  reducer,
+  app: reducer,
 });

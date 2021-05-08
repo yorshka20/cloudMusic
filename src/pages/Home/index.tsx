@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "antd";
-import { State } from "../../store";
+import { store } from "../../store";
 import { Header, Footer } from "../../components";
 import "./index.less";
+
+interface State {
+  app: {
+    currentResource: any;
+  };
+}
 
 export default function Home() {
   const dispatch = useDispatch();
 
-  const currentResource = useSelector((state: State) => state.currentResource);
+  const currentResource = useSelector(
+    (state: State) => state.app.currentResource
+  );
 
   useEffect(() => {
     console.log("currentResource", currentResource);
