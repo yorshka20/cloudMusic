@@ -25,9 +25,9 @@ store.subscribe(() => console.log(store.getState()));
 
 // The only way to mutate the internal state is to dispatch an action.
 // The actions can be serialized, logged or stored and later replayed.
-store.dispatch({ type: "counter/incremented" });
+// store.dispatch({ type: "counter/incremented" });
 // {value: 1}
-store.dispatch({ type: "counter/incremented" });
+// store.dispatch({ type: "counter/incremented" });
 // {value: 2}
-store.dispatch({ type: "counter/decremented" });
+// store.dispatch({ type: "counter/decremented" });
 // {value: 1}

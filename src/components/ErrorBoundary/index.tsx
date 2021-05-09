@@ -27,7 +27,14 @@ class ErrorBoundary extends React.Component<Props, State> {
   render(): JSX.Element {
     if (this.state.hasError) {
       return (
-        <div style={{ height: "100%", background: "black" }}>
+        <div
+          style={{
+            height: "100%",
+            background: "black",
+            color: "#fff",
+            textAlign: "center",
+          }}
+        >
           抱歉，程序出错
         </div>
       );
