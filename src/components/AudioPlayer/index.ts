@@ -44,7 +44,7 @@ export default class AudioPlayer extends EventEmitter {
     console.log(this.currentResource);
 
     this.timer = setInterval(() => {
-      console.log("tick");
+      console.log("tick from audioplayer");
     }, 1000);
   }
 

@@ -7,14 +7,16 @@ import { store } from "./store";
 import "./App.less";
 
 function App(): JSX.Element {
+  // eslint-disable-next-line
+  // @ts-ignore
+  window.store = store;
+
   return (
-    <div className="appContainer" style={{ height: "100%" }}>
+    <Provider store={store}>
       <HashRouter>
-        <Provider store={store}>
-          <Pages />
-        </Provider>
+        <Pages />
       </HashRouter>
-    </div>
+    </Provider>
   );
 }
 

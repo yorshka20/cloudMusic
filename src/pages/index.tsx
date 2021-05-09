@@ -5,10 +5,11 @@ import routerConfig from "../config/routerConfig";
 import { useAudioPlay } from "../hooks";
 
 export default function Pages(): JSX.Element {
+  // 播放器钩子
   useAudioPlay();
 
   useEffect(() => {
-    setInterval(() => console.log(1), 1000);
+    // setInterval(() => console.log(1), 1000);
   }, []);
 
   return (
