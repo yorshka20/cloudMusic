@@ -7,6 +7,8 @@ export interface State {
     avatar: string;
     nickname: string;
   };
+  // 是否展示歌曲列表
+  showPlayListPanel: boolean;
 }
 
 interface SongInfo {

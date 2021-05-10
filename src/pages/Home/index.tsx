@@ -1,7 +1,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../../store";
-import { Header, Footer, Menu, UserBlock } from "../../components";
+import {
+  Header,
+  Footer,
+  Menu,
+  UserBlock,
+  PlayListPanel,
+} from "../../components";
 import "./index.less";
 import { login } from "../../api";
 import { Button } from "antd";
@@ -39,19 +44,24 @@ export default function Home() {
   window.login = login;
 
   return (
-    <div className="main-container">
-      <Header></Header>
-      <main className="main">
-        <div className="left-panel">
-          <UserBlock avatar={avatar} name="yorshka" />
-          <Menu />
-        </div>
-        <div className="main-content">
-          main-content
-          <Button onClick={handleClick}>hello</Button>
-        </div>
-      </main>
-      <Footer></Footer>
-    </div>
+    <>
+      <div className="main-container">
+        <Header></Header>
+        <main className="main">
+          <div className="left-panel">
+            <UserBlock avatar={avatar} name="yorshka" />
+            <Menu />
+          </div>
+          <div className="main-content">
+            main-content
+            <Button onClick={handleClick}>hello</Button>
+          </div>
+        </main>
+        <Footer></Footer>
+      </div>
+
+      {/* absolute component */}
+      <PlayListPanel />
+    </>
   );
 }

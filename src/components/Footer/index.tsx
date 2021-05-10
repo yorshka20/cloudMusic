@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Progress } from "antd";
+
 import {
   HeartOutlined,
   StepBackwardOutlined,
@@ -9,8 +11,29 @@ import {
 } from "@ant-design/icons";
 import "./style.less";
 
+interface State {
+  app: {
+    showPlayListPanel: boolean;
+  };
+}
+
 function Footer() {
+  const dispatch = useDispatch();
+
   const [percent, setPercent] = useState(0);
+
+  const showPlayListPanel = useSelector(
+    (state: State) => state.app.showPlayListPanel
+  );
+
+  const handleTogglePanel = () => {
+    dispatch({
+      type: "togglePanel",
+      payload: {
+        showPlayListPanel: !showPlayListPanel,
+      },
+    });
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -60,7 +83,7 @@ function Footer() {
         <div className="toolbar-block">
           <ShareAltOutlined />
           <ShareAltOutlined />
-          <ShareAltOutlined />
+          <ShareAltOutlined onClick={handleTogglePanel} />
           <ShareAltOutlined />
           <ShareAltOutlined />
         </div>

@@ -20,6 +20,13 @@ const reducer = function (
         ...state,
         currentResource: "-1",
       };
+    case "togglePanel": {
+      const { showPlayListPanel } = action.payload;
+      return {
+        ...state,
+        showPlayListPanel,
+      };
+    }
     default:
       return state;
   }

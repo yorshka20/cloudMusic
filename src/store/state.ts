@@ -7,6 +7,7 @@ const initialState: State = {
     token: "",
     avatar: "",
   },
+  showPlayListPanel: false,
 };
 
 export default initialState;
