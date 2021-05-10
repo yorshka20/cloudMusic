@@ -1,4 +1,5 @@
 import EventEmitter from "events";
+import axios from "axios";
 
 enum PlayerState {
   Playing,
@@ -55,6 +56,14 @@ export default class AudioPlayer extends EventEmitter {
     clearInterval(this.timer as NodeJS.Timeout);
 
     console.log("audio player destroyed");
+  }
+
+  public login(phone: number, password: string): void {
+    axios
+      .get(`/login/cellphone?phone=${phone}&password=${password}`)
+      .then((res) => {
+        console.log(res);
+      });
   }
 
   public next(): void {
