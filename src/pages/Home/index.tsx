@@ -26,7 +26,7 @@ export default function Home() {
   }, [currentResource]);
 
   const handleClick = () => {
-    store.dispatch({
+    dispatch({
       type: "INCREMENT",
       payload: {
         data: 1,

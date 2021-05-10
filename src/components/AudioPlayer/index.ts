@@ -62,6 +62,10 @@ export default class AudioPlayer extends EventEmitter {
     this.currentState = PlayerState.Playing;
   }
 
+  public prev(): void {
+    this.currentState = PlayerState.Playing;
+  }
+
   public play(): void {
     this.currentState = PlayerState.Playing;
   }

@@ -35,6 +35,7 @@ function Header(props: Props) {
   const handleMenuClick = (menu: string) => {
     console.log("menu", menu);
   };
+
   return (
     <header className="header-container">
       <div className="navigate-block">
