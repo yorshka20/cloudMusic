@@ -9,13 +9,53 @@
 
   background-color: red;
 
+  box-sizing: border-box;
+  // padding-left: 100px;
+  padding: 0 10px;
+
   .navigate-block {
-    width: 80px;
+    width: 200px;
     height: 30px;
 
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding-right: 20px;
+  }
+
+  .menu-block {
+    height: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    .menu-item {
+      margin-right: 10px;
+    }
+  }
+
+  .search {
+    width: 140px;
+    align-self: center;
+
+    border-radius: 20px;
+  }
+
+  .toolbar-block {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    width: 150px;
+
+    box-sizing: border-box;
+    padding: 0 10px;
   }
 }

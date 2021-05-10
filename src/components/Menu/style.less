@@ -1,4 +1,4 @@
-.menu-container {
+.menu-block-container {
   width: 100%;
   height: auto;
 
@@ -12,15 +12,33 @@
 
   box-sizing: border-box;
   padding: 15px 10px;
+
+  .menu-block-title {
+    margin: 0;
+    align-self: flex-start;
+
+    margin-bottom: 5px;
+  }
+
+  .menu-block {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin-bottom: 40px;
+  }
 }
 
-.menu-item-container {
+.menu-item {
   width: 100%;
   height: 20px;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   margin: 4px 0;

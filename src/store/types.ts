@@ -1,5 +1,12 @@
 export interface State {
+  // 当前资源
   currentResource?: any;
+  // 用户信息
+  user: {
+    token: string;
+    avatar: string;
+    nickname: string;
+  };
 }
 
 interface SongInfo {

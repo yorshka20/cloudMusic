@@ -3,9 +3,83 @@
   height: 60px;
 
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  position: relative;
 
   background-color: yellow;
+
+  box-sizing: border-box;
+  padding: 0 10px;
+  padding-top: 10px;
+
+  .progress-bar {
+    width: 100%;
+    height: 5px;
+
+    position: absolute;
+    top: -10px;
+    left: 0;
+  }
+
+  .music-info-block {
+    width: 100%;
+    flex: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .music-info {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      height: 100%;
+
+      .cover {
+        width: 45px;
+        height: 45px;
+
+        border-radius: 10px;
+      }
+      .info {
+        margin-left: 15px;
+
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .play-control-block {
+      width: 200px;
+      height: 100%;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toolbar-block {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      width: 150px;
+      height: 100%;
+    }
+  }
 }

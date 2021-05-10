@@ -6,6 +6,7 @@ import {
   MailOutlined,
   SkinOutlined,
   SwitcherOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
 import { Input } from "antd";
 import "./style.less";
@@ -40,10 +41,10 @@ function Header(props: Props) {
     <header className="header-container">
       <div className="navigate-block">
         <LeftOutlined onClick={handleLeft} />
-        <RightOutlined onClick={handleRight} />
+        <RightOutlined style={{ marginLeft: 10 }} onClick={handleRight} />
       </div>
 
-      <div className="header-menu-block">
+      <div className="menu-block">
         {menuList.map((menu) => (
           <span
             className="menu-item"
@@ -56,7 +57,12 @@ function Header(props: Props) {
       </div>
 
       {/* search  */}
-      <Input width={140} />
+      <Input
+        className="search"
+        placeholder="搜索"
+        prefix={<SearchOutlined />}
+        size="small"
+      />
 
       {/* toolbar  */}
       <div className="toolbar-block">

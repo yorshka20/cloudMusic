@@ -11,7 +11,7 @@ function MenuItem(props: Props) {
   const { icon: Icon, title } = props;
 
   return (
-    <div className="menu-item-container">
+    <div className="menu-item">
       {Icon && <Icon />}
       <span>{title}</span>
     </div>

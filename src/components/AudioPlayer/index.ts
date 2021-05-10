@@ -21,6 +21,8 @@ export default class AudioPlayer extends EventEmitter {
   private currentResource: any = "";
   private currentState: PlayerState = PlayerState.Stopped;
 
+  // private audio: AudioNode
+
   private timer: NodeJS.Timeout | undefined;
 
   constructor() {
