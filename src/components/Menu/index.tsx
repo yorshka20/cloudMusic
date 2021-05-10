@@ -18,13 +18,13 @@ function Menu() {
   return (
     <div className="menu-block">
       <div className="entry-block">
-        {entryList.map((entry: string, index: number) => (
-          <MenuItem icon={StepForwardOutlined} key={index} title={entry} />
+        {entryList.map((entry: string) => (
+          <MenuItem icon={StepForwardOutlined} key={entry} title={entry} />
         ))}
       </div>
       <div className="my-music-block">
-        {myMusicList.map((name: string, index: number) => (
-          <MenuItem icon={StepForwardOutlined} key={index} title={name} />
+        {myMusicList.map((name: string) => (
+          <MenuItem icon={StepForwardOutlined} key={name} title={name} />
         ))}
       </div>
     </div>
