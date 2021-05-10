@@ -18,7 +18,7 @@ export default function Pages(): JSX.Element {
         <Switch>
           {routerConfig.map((element) => (
             <Route path={element.path} key={element.path}>
-              {element.component}
+              <element.component />
             </Route>
           ))}
         </Switch>

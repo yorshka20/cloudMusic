@@ -6,10 +6,6 @@ export default function useAudioPlay(): void {
     const player = new AudioPlayer();
     player.init();
 
-    // eslint-disable-next-line
-    // @ts-ignore
-    window.player = player;
-
     return () => {
       player.destroy();
     };

@@ -4,7 +4,7 @@ import Home from "../pages/Home";
 interface RouterComponent {
   name: string;
   path: string;
-  component: React.ReactNode;
+  component: React.FC;
 }
 
 const routers: RouterComponent[] = [

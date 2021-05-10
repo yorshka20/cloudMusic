@@ -58,14 +58,6 @@ export default class AudioPlayer extends EventEmitter {
     console.log("audio player destroyed");
   }
 
-  public login(phone: number, password: string): void {
-    axios
-      .get(`/login/cellphone?phone=${phone}&password=${password}`)
-      .then((res) => {
-        console.log(res);
-      });
-  }
-
   public next(): void {
     this.currentState = PlayerState.Playing;
   }
