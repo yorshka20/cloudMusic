@@ -1,9 +1,13 @@
 import { request } from "../request";
 
+interface LoginResponse {
+  [key: string]: any;
+}
+
 export default async function login(
   phone: number,
   password: string
-): Promise<any> {
+): Promise<LoginResponse> {
   const data = await request.get(
     `/login/cellphone?phone=${phone}&password=${password}`
   );
