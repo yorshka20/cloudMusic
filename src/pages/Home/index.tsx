@@ -44,24 +44,45 @@ export default function Home() {
   window.login = login;
 
   return (
-    <>
-      <div className="main-container">
-        <Header></Header>
-        <main className="main">
-          <div className="left-panel">
-            <UserBlock avatar={avatar} name="yorshka" />
-            <Menu />
-          </div>
-          <div className="main-content">
-            main-content
-            <Button onClick={handleClick}>hello</Button>
-          </div>
-        </main>
-        <Footer></Footer>
-      </div>
+    <div className="main-container">
+      {/* 头部组件 */}
+      <Header />
+
+      {/* 主屏幕内容 */}
+      <main className="main">
+        {/* 左侧菜单栏 */}
+        <div className="left-panel">
+          <UserBlock avatar={avatar} name="yorshka" />
+          <Menu />
+        </div>
+
+        {/* 右侧主内容区域 */}
+        <div className="main-content">
+          {/* 首页推荐走马灯 */}
+          <div className="carousel-block">img</div>
+
+          {/* 推荐歌单 */}
+          <div className="album-block"></div>
+
+          {/* 专属推荐 */}
+          <div className="special-recommend-block"></div>
+
+          {/* 最新音乐 */}
+          <div className="hottest-music-block"></div>
+
+          {/* mv列表 */}
+          <div className="mv-block"></div>
+
+          {/* 主播电台 */}
+          <div className="radio-block"></div>
+        </div>
+      </main>
+
+      {/* 底部播放控制组件 */}
+      <Footer />
 
       {/* absolute component */}
       <PlayListPanel />
-    </>
+    </div>
   );
 }
