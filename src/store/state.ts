@@ -8,6 +8,7 @@ const initialState: State = {
     avatar: "",
   },
   showPlayListPanel: false,
+  showModal: false,
 };
 
 export default initialState;

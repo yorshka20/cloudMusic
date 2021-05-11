@@ -27,6 +27,12 @@ const reducer = function (
         showPlayListPanel,
       };
     }
+    case "toggleModal": {
+      return {
+        ...state,
+        showModal: !state.showModal,
+      };
+    }
     default:
       return state;
   }

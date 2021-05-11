@@ -9,6 +9,8 @@ export interface State {
   };
   // 是否展示歌曲列表
   showPlayListPanel: boolean;
+
+  showModal: boolean;
 }
 
 interface SongInfo {

@@ -6,6 +6,7 @@ import {
   Menu,
   UserBlock,
   PlayListPanel,
+  LoginModal,
 } from "../../components";
 import "./index.less";
 import { login } from "../../api";
@@ -83,6 +84,7 @@ export default function Home() {
 
       {/* absolute component */}
       <PlayListPanel />
+      <LoginModal />
     </div>
   );
 }
