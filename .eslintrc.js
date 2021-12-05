@@ -30,5 +30,6 @@ module.exports = {
     "react/jsx-filename-extension": [2, { extensions: [".jsx", ".tsx"] }],
     "no-use-before-define": "off",
     "ban-ts-comment": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
   },
 };

@@ -5,6 +5,7 @@ import Menu from "./Menu";
 import UserBlock from "./UserBlock";
 import PlayListPanel from "./PlayListPanel";
 import LoginModal from "./LoginModal";
+import SkinButton from "./Skin";
 
 export {
   ErrorBoundary,
@@ -14,4 +15,5 @@ export {
   UserBlock,
   PlayListPanel,
   LoginModal,
+  SkinButton,
 };

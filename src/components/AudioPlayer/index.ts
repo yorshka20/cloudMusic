@@ -1,10 +1,9 @@
 import EventEmitter from "events";
-import axios from "axios";
 
-enum PlayerState {
-  Playing,
-  Pause,
-  Stopped,
+export enum PlayerState {
+  Running = "running",
+  Suspended = "suspended",
+  Closed = "closed",
 }
 
 /**
@@ -18,22 +17,35 @@ enum PlayerState {
 export default class AudioPlayer extends EventEmitter {
   static instance: AudioPlayer;
 
-  private currentResource: any = "";
-  private currentState: PlayerState = PlayerState.Stopped;
+  private get currentState(): AudioContextState {
+    return this.audioContext?.state || PlayerState.Closed;
+  }
 
-  // private audio: AudioNode
+  private set currentState(state) {
+    this.currentResource = state;
+  }
 
-  private timer: NodeJS.Timeout | undefined;
+  private currentResource: string;
+
+  private audioContext: AudioContext;
+
+  private timer: NodeJS.Timeout | null;
+
+  static getInstance(): AudioPlayer {
+    if (!AudioPlayer.instance) {
+      AudioPlayer.instance = new AudioPlayer();
+    }
+
+    return AudioPlayer.instance;
+  }
 
   constructor() {
     super();
 
-    if (AudioPlayer.instance) {
-      return AudioPlayer.instance;
-    }
-
+    this.timer = null;
     this.currentResource = "";
-    this.currentState = PlayerState.Stopped;
+    this.currentState = PlayerState.Closed;
+    this.audioContext = new AudioContext({});
 
     AudioPlayer.instance = this;
 
@@ -41,7 +53,7 @@ export default class AudioPlayer extends EventEmitter {
   }
 
   public init(): void {
-    this.currentState = PlayerState.Stopped;
+    this.currentState = PlayerState.Closed;
 
     console.log(this.currentState);
     console.log(this.currentResource);
@@ -52,7 +64,7 @@ export default class AudioPlayer extends EventEmitter {
   }
 
   public destroy(): void {
-    this.currentState = PlayerState.Stopped;
+    this.currentState = PlayerState.Closed;
     this.currentResource = "";
 
     clearInterval(this.timer as NodeJS.Timeout);
@@ -61,22 +73,25 @@ export default class AudioPlayer extends EventEmitter {
   }
 
   public next(): void {
-    this.currentState = PlayerState.Playing;
+    this.currentState = PlayerState.Running;
   }
 
   public prev(): void {
-    this.currentState = PlayerState.Playing;
+    this.currentState = PlayerState.Running;
   }
 
   public play(): void {
-    this.currentState = PlayerState.Playing;
+    this.currentState = PlayerState.Running;
+    console.log(this.audioContext);
+    this.audioContext.resume();
   }
 
   public pause(): void {
-    this.currentState = PlayerState.Pause;
+    this.currentState = PlayerState.Suspended;
+    this.audioContext.suspend();
   }
 
   public stop(): void {
-    this.currentState = PlayerState.Stopped;
+    this.currentState = PlayerState.Closed;
   }
 }

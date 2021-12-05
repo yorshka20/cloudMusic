@@ -1,9 +1,11 @@
-import { useEffect } from "react";
-import AudioPlayer from "../components/AudioPlayer";
+import { useEffect, useRef } from "react";
+import AudioPlayer, { PlayerState } from "../components/AudioPlayer";
 
 export default function useAudioPlay(): void {
+  const audioPlayerRef = useRef<AudioPlayer>(new AudioPlayer());
+
   useEffect(() => {
-    const player = new AudioPlayer();
+    const player = audioPlayerRef.current;
     player.init();
 
     return () => {

@@ -10,6 +10,7 @@ import {
 } from "@ant-design/icons";
 import { Input } from "antd";
 import "./style.less";
+import SkinButton from "../Skin";
 
 interface Props {
   [key: string]: any;
@@ -68,7 +69,8 @@ function Header(props: Props) {
       <div className="toolbar-block">
         <SettingOutlined />
         <MailOutlined />
-        <SkinOutlined />
+        {/* <SkinOutlined /> */}
+        <SkinButton />
         <SwitcherOutlined />
       </div>
     </header>
